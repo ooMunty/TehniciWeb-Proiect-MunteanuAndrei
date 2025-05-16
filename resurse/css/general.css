@@ -1,0 +1,344 @@
+/* p{
+    color:navy;
+    font-weight:bold;
+} */
+   
+html {
+    font-size: 18px;
+}
+
+body {
+    --spatiere-pagina: 100px;
+
+    --rosu-spre-roz: #EB3648;
+    --portocaliu-rosiatic: #EB5136;
+    --mov: #CC36EB;
+    --portocaliu-pal: #EB6F36;
+    --roz-spre-mov: #EB36B4;
+    --negru: black;
+    --alb: white;
+    --gri: #E0E0E0;
+    --gri-inchis: #666;
+    --galben-deschis: #FFFEC8;
+}
+
+
+
+
+
+
+/* h2{
+    font-size: 1.4rem;
+} */
+
+#grid-pagina {
+    display: grid;
+    grid-template-areas: "sectiune1 sectiune1 sectiune1"
+                         "sectiune3 sectiune2 sectiune4"
+                         "sectiune5 sectiune2 sectiune4"
+                         "sectiune5 sectiune6 sectiune7"
+                         "sectiune8 sectiune8 sectiune8";
+}
+
+#grid-pagina > *{
+    outline: 1px solid var(--mov);
+    padding: 7px;
+}
+
+#grid-pagina > figure{
+    margin: 0;
+}
+
+
+main{
+    padding-left: var(--spatiere-pagina);
+    padding-right: var(--spatiere-pagina);
+}
+
+#sectiune1 {
+    grid-area: sectiune1;
+}
+
+#sectiune2 {
+    grid-area: sectiune2;
+}
+
+#sectiune3 {
+    grid-area: sectiune3;
+}
+
+#sectiune4 {
+    grid-area: sectiune4;
+}
+
+#sectiune5 {
+    grid-area: sectiune5;
+}
+
+#sectiune6 {
+    grid-area: sectiune6;
+}
+
+#sectiune7 {
+    grid-area: sectiune7;
+}
+
+#sectiune8 {
+    grid-area: sectiune8;
+}
+
+h1 {
+    font-family: "Orbitron", sans-serif;
+    font-optical-sizing: auto;
+    font-weight: 500;
+    font-style: normal;
+}
+
+
+.taburi-iframe>a {
+    display: block;
+    width: 100px;
+    height: 50px;
+    border: 1px solid var(--negru);
+    background-color: var(--portocaliu-pal);
+    text-align: center;
+    transition: background-color 0.3s, color 0.3s;
+    text-decoration: none;
+    color: var(--negru);
+    font-weight: bold;
+    border-left: 3px solid var(--rosu-spre-roz);
+    box-shadow: inset 0 0 5px var(--negru);
+    border-top-right-radius: 20px;
+    position:relative;
+    z-index: 1;
+}
+
+.taburi-iframe>a:nth-child(2) {
+    margin-top: -5px;
+    z-index: 2;
+}
+
+.taburi-iframe>a:hover {
+    background-color: var(--portocaliu-rosiatic);
+    color: var(--negru);
+    transition: .5s linear;
+    border-color: var(--roz-spre-mov);
+}
+
+.taburi-iframe {
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-end;
+}
+
+.container-iframe {
+    width: 100%;
+    /* max-width: 500px; */
+    min-width: 300px;
+    display: flex;
+    flex-direction: row-reverse;
+    
+}
+
+.container-iframe>iframe {
+    width: 100%;
+    border:3px solid var(--rosu-spre-roz);
+}
+
+
+.table-container {
+    overflow-x: auto;
+    margin: 20px 0;
+    box-shadow: 0 2px 15px var(--rosu-spre-roz);
+}
+
+table {
+    width: 100%;
+    min-width: 800px;
+    border-collapse: collapse;
+    font-family: Arial, sans-serif;
+    caption-side: bottom;
+    position: relative;
+}
+
+caption {
+    padding: 15px;
+    font-style: italic;
+    color: var(--gri-inchis);
+}
+
+th, td {
+    padding: 15px;
+    text-align: left;
+    border-bottom: 1px solid var(--gri);
+}
+
+th:nth-child(odd):not(:last-child),
+td:nth-child(odd):not(:last-child) {
+    border-right: 2px solid var(--roz-spre-mov); 
+}
+
+th:nth-child(even):not(:last-child),
+td:nth-child(even):not(:last-child) {
+    border-right: 2px solid var(--rosu-spre-roz); 
+}
+
+thead {
+    border-bottom: 3px solid var(--portocaliu-pal);
+}
+
+tfoot {
+    border-top: 3px solid var(--portocaliu-pal);
+}
+
+tbody tr {
+    transition: box-shadow 0.3s linear;
+    position: relative;
+}
+
+tbody tr:hover {
+    box-shadow: inset 0 0 15px var(--negru);
+}
+
+thead {
+    background-color: var(--alb);
+}
+
+tfoot td {
+    background-color: var(--alb);
+    font-weight: bold;
+}
+
+th {
+    color: var(--rosu-spre-roz);
+    font-weight: 600;
+}
+
+
+#link-top{
+    position:fixed;
+    bottom:0.3em;
+    opacity:0.5;
+    left:0.3em;
+    width:3rem;
+    box-sizing: border-box;
+    height:3rem;
+    line-height:3rem;
+    text-align:center;
+    border:5px solid var(--mov);
+    border-top-color: var(--rosu-spre-roz);
+    border-radius:50%;
+    background: rgb(220,220,220);
+    box-shadow: 0 0 10px 5px var(--negru);
+}
+
+#link-top:hover{
+    opacity:1;
+}
+
+#triunghi-exterior{
+    height:0px;
+    width:0;
+    display:inline-block;
+    border-bottom:1.5rem solid grey;
+    border-left:1rem solid transparent;
+    border-right:1rem solid transparent;
+    vertical-align: top;
+    transform: translateY(30%);
+}
+
+#triunghi-interior{
+    width: 0;
+    height: 0;
+    border-left: 0.5rem solid transparent;
+    border-right: 0.5rem solid transparent;
+    border-bottom: 0.75rem solid var(--alb);
+    position: absolute;
+    top: 0.5rem;
+    left: -0.5rem;
+}
+
+a:visited{
+    color: var(--rosu-spre-roz);
+}
+
+a[href^="http"]::before{
+    content: "⮳";
+    font-size: 1.5em;
+    margin-right: 0.3em;
+    vertical-align: middle;
+    transition: color 0.5s linear;
+}
+
+a[href^="http"]:hover::before{
+    color: var(--portocaliu-pal);
+}
+
+main a{
+    position: relative;
+    display: inline-block;
+    color: inherit;
+    transition: background-size 0.5s linear;
+    background-image: radial-gradient(circle, var(--galben-deschis) 0%, var(--galben-deschis) 40%, transparent 80%, transparent 100%);
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: 0 0;
+}
+  
+main a:hover{
+    background-size: 100% 100%;
+}
+
+a:active{
+    outline: 1px solid var(--portocaliu-pal);
+}
+  
+video {
+    width: 100%;
+    max-width: 800px;
+    min-width: 300px;
+    display: block;
+    margin: 0 auto;
+}
+
+::cue {
+    background: transparent;
+    color: white;
+    text-shadow: 2px 2px 4px black;
+    font-size: 1.5em;
+}
+  
+
+@media screen and (max-width: 1200px) {
+    html {
+        font-size: 14px;
+    }
+
+    body{
+        --spatiere-pagina: 50px;
+    }
+    
+    #grid-pagina {
+        grid-template-rows: 1fr 1fr;
+        grid-template-areas: "sectiune1 sectiune1"
+                             "sectiune2 sectiune4"
+                             "sectiune2 sectiune4"
+                             "sectiune3 sectiune5"
+                             "sectiune6 sectiune7"
+                             "sectiune8 sectiune8";
+    }
+}
+
+@media screen and (max-width: 800px) {
+    html {
+        font-size: 10px;
+    }
+
+    body{
+        --spatiere-pagina: 20px;
+    }
+    
+    #grid-pagina{
+        display:block;
+    }
+}

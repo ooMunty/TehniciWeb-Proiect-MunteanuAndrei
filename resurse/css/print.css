@@ -1,0 +1,68 @@
+#banner {
+    display:none;
+}
+
+@media print {
+    #banner {
+    display:block !important;
+    position:absolute;
+    top:0;
+    left:15%;
+    width:80%;
+    border:3px dotted black;
+    text-align:center;
+    }
+    picture, iframe, figcaption, #link-top, nav {
+        display:none !important;
+    }
+    #grid-pagina {
+        display:block !important;
+    }
+    a,a:visited {
+        text-decoration:none !important;
+        color:black !important;
+    }
+    h1 {
+        text-align:center;
+        vertical-align:middle;
+        font-size:2.5em;
+        text-decoration:underline;
+        display:flex;
+        justify-content:center;
+        align-items:center;
+        height:100vh;
+    }
+    h1 {
+        page-break-after:always;
+    }
+    footer {
+        page-break-before:always;
+    }
+    body::after {
+        content:"MunteanuAndrei";
+        position:fixed;
+        bottom:1px;
+        right:1px;
+        width:100px;
+        height:2cm;
+        border:3px double black;
+        opacity:0.65;
+        text-align:center;
+        line-height:2cm;
+        font-size:0.8rem;
+    }
+    @page {
+		size: A4 portrait;
+		margin-bottom:2cm;
+		margin-top:2cm;
+		counter-increment: page;		
+	}
+    @page:left {
+        margin-left:2.5cm;
+        margin-right:0.5cm;
+    }
+    @page:right {
+        margin-right:2.5cm;
+        margin-left:0.5cm;
+    }
+}

@@ -1,0 +1,109 @@
+@charset "UTF-8";
+nav {
+  background-color: var(--portocaliu-pal);
+  --inaltime-meniu: 30px;
+  --latime-buton: 250px;
+  height: var(--inaltime-meniu);
+  position: sticky;
+  top: 0;
+}
+
+/*-------------*/
+ul.meniu {
+  display: flex;
+  list-style-type: none;
+  padding: 0;
+}
+ul.meniu ul {
+  display: none; /*ascund*/
+  padding: 0;
+  animation-name: animatie_submeniu;
+  animation-timing-function: linear;
+  animation-iteration-count: 1;
+  animation-duration: 0.4s;
+  animation-fill-mode: forwards;
+  transform-origin: 50% 0;
+}
+ul.meniu ul li {
+  position: relative;
+  padding-left: 20px;
+  overflow: hidden;
+}
+ul.meniu ul li a::before {
+  content: "➤";
+  position: absolute;
+  left: -20px;
+  opacity: 0;
+  transform: translateX(-10px);
+  transition: all 1s linear;
+}
+ul.meniu ul li:hover a::before {
+  opacity: 1;
+  left: 5px;
+  animation: sageata-traseu 0.5s linear forwards;
+}
+ul.meniu li {
+  width: var(--latime-buton);
+  height: var(--inaltime-meniu);
+  border: 1px solid var(--rosu-spre-roz);
+  box-sizing: border-box;
+  text-align: center;
+  font-weight: bold;
+  line-height: var(--inaltime-meniu);
+  transition: all 0.5s linear;
+}
+ul.meniu li:hover {
+  background-color: var(--roz-spre-mov);
+  box-shadow: inset 0 0 15px var(--negru);
+}
+ul.meniu li:hover > a, ul.meniu li:hover > div {
+  color: var(--negru);
+}
+ul.meniu li:hover ul {
+  display: block;
+  background-color: var(--portocaliu-pal);
+  position: relative;
+  list-style-type: none;
+  left: -1px;
+}
+ul.meniu li > a, ul.meniu li > div {
+  color: var(--alb);
+}
+ul.meniu li div.imag-icon {
+  display: none;
+}
+ul.meniu a, ul.meniu div {
+  color: var(--negru);
+  text-decoration: none;
+  transition: all 0.5s linear;
+  display: block;
+  height: 100%;
+  cursor: pointer;
+}
+
+#hamburger, #ch-menu {
+  display: none;
+}
+
+@keyframes animatie_submeniu {
+  0% {
+    opacity: 0;
+    transform: scaleY(0);
+  }
+  100% {
+    opacity: 1;
+    transform: scaleY(1);
+  }
+}
+@keyframes sageata-traseu {
+  0% {
+    left: -20px;
+    opacity: 0;
+  }
+  50% {
+    opacity: 1;
+  }
+  100% {
+    left: 90px;
+  }
+}

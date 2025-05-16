@@ -1,0 +1,48 @@
+#hamburger{
+    display:block;
+}
+
+ul.meniu{
+    display:none;
+    margin:0;
+    width:100%;
+    background-color: var(--portocaliu-pal);
+
+    animation-name: animatie_ecran_mic;
+    animation-timing-function: linear;
+    animation-iteration-count: 1;
+    animation-duration: 0.5s;
+    animation-fill-mode: forwards;
+    transform-origin: 0 0;
+}
+
+ul.meniu li{
+    margin:0;
+    width:100%;
+}
+
+#ch-menu:checked+ul.meniu{
+    display:block;
+    position:relative;
+    z-index:10;
+}
+
+#hamburger>img{
+    height:var(--inaltime-meniu);
+    display:block;
+}
+
+main{
+    margin-top:20px;
+}
+
+@keyframes animatie_ecran_mic{
+    0%{
+        opacity:0;
+        transform: scale(0);
+    }
+    100%{
+        opacity:1;
+        transform: scale(1);
+    }
+}
