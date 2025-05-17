@@ -122,7 +122,7 @@ function initImagini(){
         imag.fisier_mediu=path.join("/", obGlobal.obImagini.cale_galerie, "mediu",numeFis+".webp" )
         imag.fisier_mic=path.join("/", obGlobal.obImagini.cale_galerie, "mic",numeFis+".webp" )
         imag.fisier=path.join("/", obGlobal.obImagini.cale_galerie, imag.fisier )
-        imag.alt = imag.alt || "";
+        imag.alt = imag.alt || imag.titlu || "";
         imag.title = imag.descriere || "";
         // imag.description = imag.descriere || "";
     }

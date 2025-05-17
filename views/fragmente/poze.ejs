@@ -5,8 +5,12 @@
         d=new Date()
         vect_sferturi=["1", "2", "3", "4"]
         sfert_curent=vect_sferturi[~~(d.getMinutes / 15)]
+        let count=0;
         for (let imag of locals.imagini) { %>
-            <% if (imag.sfert_ora && imag.sfert_ora.includes(sfert_curent)) { %>
+            <% if (imag.sfert_ora && imag.sfert_ora.includes(sfert_curent)) { 
+                if (count>=10) break;
+                count++;
+            %>
                 <figure>
                     <picture>
                         <source srcset="<%- imag.fisier_mic %>" media="screen and (max-width:600px)" />
