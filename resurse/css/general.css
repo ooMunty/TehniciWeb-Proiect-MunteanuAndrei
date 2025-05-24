@@ -20,6 +20,8 @@ body {
     --gri: #E0E0E0;
     --gri-inchis: #666;
     --galben-deschis: #FFFEC8;
+
+    overflow-x:hidden; /*pentru textul responsive*/
 }
 
 
@@ -307,7 +309,113 @@ video {
     text-shadow: 2px 2px 4px black;
     font-size: 1.5em;
 }
-  
+
+/*pentru reflexia textului*/
+.text-reflectat {
+    position: relative;
+    left: 0;
+    top: 100%;
+    transform-origin: 0 0;
+    transform: rotateX(180deg) skew(-45deg) scaleY(0.5) translate(10px, -30px);
+    opacity: 0.55;
+    filter: blur(2px);
+    transition: transform 0.3s ease;
+}
+
+.text {
+    position: relative;
+}
+
+.text, .text-reflectat {
+    font-size: 50px;
+    line-height: 50px;
+    font-weight: bold;
+}
+
+.text-reflectat:hover {
+    transform: rotateX(180deg) skew(-45deg) scaleY(2) translate(10px, -40px);
+}
+
+#duotone-imagine {
+    position: relative;
+    width: 200px;
+    height: 200px;
+    background-image: url("/resurse/imagini/rose.png");
+    background-size: cover;
+    background-position: center;
+    overflow: hidden;
+}
+
+#duotone-imagine::before,
+#duotone-imagine::after {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    transition: all 0.5s linear;
+}
+
+#duotone-imagine::before {
+    mix-blend-mode: multiply;
+    background-color: red;
+    z-index: 1;
+}
+
+#duotone-imagine::after {
+    background-color: green;
+    mix-blend-mode: screen;
+    z-index: 2;
+}
+
+#duotone-imagine:hover::before {
+    background-color:  blue;
+}
+
+#duotone-imagine:hover::after {
+    background-color: black;
+}
+
+#text-responsive {
+    display: inline-block;
+    padding-left: 100%;
+    animation: scroll-text 10s linear infinite;
+    white-space: nowrap;
+    font-size:2rem;
+    overflow: hidden;
+
+    /*customizare culoare*/
+    background: linear-gradient(0deg, var(--galben-deschis), var(--rosu-spre-roz));
+    background-clip: text; /*nu e suportat pe toate browserele*/
+    -webkit-background-clip: text; 
+    color: transparent; /*nu e suportat pe toate browserele*/
+    -webkit-text-fill-color: transparent;
+}
+
+
+/*incomplet*/
+.sageti {
+    border: 0;
+    height: 10px;
+    width:30%;
+    background-image: 
+        linear-gradient(-45deg,white 50%,transparent 50%),
+        linear-gradient(45deg,red 50%, transparent 50%);
+    background-size: 20px 20px;
+    background-position: 0 50%;
+    background-repeat:repeat-x;
+}
+
+
+@keyframes scroll-text {
+    0% {
+        transform: translateX(0%);
+    }
+    100% {
+        transform: translateX(-100%);
+    }
+}
 
 @media screen and (max-width: 1200px) {
     html {

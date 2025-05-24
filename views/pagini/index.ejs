@@ -18,7 +18,7 @@
         <main>
             <br><br><br>
 
-            <div>
+            <div id="imagine-happy-shopping">
                 <picture>
                     <source srcset="/resurse/imagini/1-200x200.png" media="(max-width: 800px)"/>
                     <source srcset="/resurse/imagini/1-400x400.png" media="(max-width: 1200px)"/>
@@ -135,6 +135,7 @@
     
                 <section id="sectiune4">
                     <h2>Despre produse si abordarea noastra</h2>
+                    <div id="duotone-imagine"></div>
                     <p>
                         Cine suntem noi? Suntem o companie ce permite achizitionarea de produse <b>componente</b> ale unui 
                         <b>calculator</b> (de exemplu <b>placi video</b>, procesoare). Pentru achizitionarea acestor produse, 
@@ -256,9 +257,12 @@
                 <br><br>
             </div>
 
+            
+            <hr class="sageti">
+
             <div>
                 <%- include("../fragmente/poze.ejs") %>
-                <p>Daca vreti totusi un link catre galeria separata, iata-l!</p>
+                <div id="text-responsive"><p>Daca vreti totusi un link catre galeria separata, iata-l!</p></div>
                 <a href="rolagalerie">Link</a>
             </div>
 
@@ -274,6 +278,11 @@
                         Browserul dumneavoastra nu suporta tagul video.
                     </video>
                 </section>
+            </div>
+
+            <div id="container-reflexie">
+                <h2 class="text">Multumim ca ne-ati vizitat site-ul!</h2>
+                <h2 class="text-reflectat" id="efect-alungire">Multumim ca ne-ati vizitat site-ul!</h2>
             </div>
         </main>
  
